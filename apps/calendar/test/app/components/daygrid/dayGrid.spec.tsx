@@ -1,3 +1,4 @@
+/* eslint-disable jest/expect-expect */
 import { FunctionComponent, h } from 'preact';
 import { render, fireEvent, screen } from '@testing-library/preact';
 
@@ -110,6 +111,8 @@ describe('DayGrid Creation Guide', () => {
     fireEvent.mouseMove(document, { clientX: 15, clientY: 20 });
     fireEvent.mouseMove(document, { clientX: 15, clientY: 20 });
     fireEvent.mouseMove(document, { clientX: 15, clientY: 20 });
+
+    // enable/disable following code!!!!
     fireEvent.mouseMove(document, { clientX: 15, clientY: 20 });
     fireEvent.mouseUp(document, { clientX: 15, clientY: 40, button: 0 });
 

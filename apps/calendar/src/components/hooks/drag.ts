@@ -20,10 +20,6 @@ export function useDrag({
   onClick = noop,
   onCancel = noop,
 }: DragListeners) {
-  let onMouseMove: MouseEventListener;
-  let onMouseUp: MouseEventListener;
-  let onKeydownESC: (e: KeyboardEvent) => void;
-
   let distance = 0;
   let isMoved = false;
   let isDragStartFired = false;
@@ -55,7 +51,7 @@ export function useDrag({
     toggleListeners(true);
   };
 
-  onMouseMove = (e: MouseEvent) => {
+  const onMouseMove = (e: MouseEvent) => {
     // prevent automatic scrolling.
     e.preventDefault();
 
@@ -79,7 +75,7 @@ export function useDrag({
     onDrag(e);
   };
 
-  onMouseUp = (e: MouseEvent) => {
+  const onMouseUp = (e: MouseEvent) => {
     if (isMoved) {
       onDragEnd(e);
     } else {
@@ -90,7 +86,7 @@ export function useDrag({
     toggleListeners(false);
   };
 
-  onKeydownESC = (e: KeyboardEvent) => {
+  const onKeydownESC = (e: KeyboardEvent) => {
     if (isKey(e, ESCAPE)) {
       if (isDragStartFired) {
         onCancel();
@@ -108,3 +104,5 @@ export function useDrag({
     onKeydown: onKeydownESC,
   };
 }
+
+export const calendarDrag = useDrag;

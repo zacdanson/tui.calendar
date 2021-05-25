@@ -13,4 +13,5 @@ module.exports = {
     '<rootDir>/test/matcher/matrices.ts',
     '<rootDir>/test/matcher/viewModels.ts',
   ],
+  testMatch: ['<rootDir>/test/app/components/daygrid/dayGrid.spec.tsx'],
 };

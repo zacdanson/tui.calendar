@@ -16,7 +16,7 @@ const CreationGuide: FunctionComponent<CreationGuideProps> = (props) => {
     height: toPercent(100),
   };
 
-  return <div className={cls('guide-creation')} style={style}></div>;
+  return <div data-test-id="creation-guide" className={cls('guide-creation')} style={style} />;
 };
 
 export default CreationGuide;

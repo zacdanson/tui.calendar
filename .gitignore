@@ -54,7 +54,7 @@ temp
 doc
 report
 tui.calendar
-# dist
+dist
 *.vim
 
 # for local dev purpose

@@ -1,6 +1,6 @@
 /*!
  * TOAST UI Calendar
- * @version 1.15.0 | Thu Oct 21 2021
+ * @version 1.15.0 | Mon Nov 01 2021
  * @author NHN FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -17531,9 +17531,9 @@ var timeCore = {
         // and convert milliseconds value to hours.
         var result = datetime.millisecondsTo('hour', (y * baseMil) / height),
             floored = result | 0,
-            nearest = common.nearest(result - floored, [0, 1]);
+            nearest = common.nearest(result - floored, [0.25, 0.5, 0.75, 1]);
 
-        return floored + (nearest ? 0.5 : 0);
+        return floored + nearest;
     },
 
     /**
